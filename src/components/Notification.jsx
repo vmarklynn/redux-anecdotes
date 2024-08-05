@@ -1,5 +1,4 @@
-import { createNotification } from "../reducers/notificationReducer"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 
 const Notification = () => {
   const notification = useSelector(state => state.notification)
@@ -10,10 +9,15 @@ const Notification = () => {
     borderWidth: 1
   }
   return (
-    <div style={style}>
-      {notification}
-    </div>
+    <>
+      {(notification.length > 0) &&
+        <div style={style}>
+          {(notification.length > 0) && notification}
+        </div>
+      }
+    </>
   )
+
 }
 
 export default Notification
