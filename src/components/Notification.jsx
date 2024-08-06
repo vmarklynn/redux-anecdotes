@@ -12,7 +12,7 @@ const Notification = () => {
     <>
       {(notification.length > 0) &&
         <div style={style}>
-          {(notification.length > 0) && notification}
+          {notification}
         </div>
       }
     </>
