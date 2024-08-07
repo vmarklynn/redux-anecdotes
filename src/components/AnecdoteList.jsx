@@ -17,12 +17,18 @@ const AnecdoteList = () => {
 
   const dispatch = useDispatch()
 
+  let timeOutId
+
   const vote = (id, content) => {
     dispatch(voteAnecdote(id))
-    dispatch(removeNotification())
     const notification = `You voted for ${content}`
     dispatch(createNotification(notification))
-    setTimeout(() => dispatch(removeNotification()), 5000)
+    if (timeOutId)
+      clearTimeout(timeOutId)
+    timeOutId = setTimeout(() => {
+      dispatch(removeNotification())
+      timeOutId = null
+    }, 5000)
   }
 
   return (
