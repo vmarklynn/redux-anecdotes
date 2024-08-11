@@ -1,6 +1,11 @@
 {
   "anecdotes": [
     {
+      "content": "If it hurts, do it less",
+      "id": "47146",
+      "votes": 0
+    },
+    {
       "content": "If it hurts, do it more often",
       "id": "47145",
       "votes": 0
