@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios'
 const baseUrl = 'http://localhost:3001/anecdotes'
 
 const getAll = async () => {
@@ -12,4 +12,9 @@ const createNew = async (content) => {
   return response.data
 }
 
-export default { getAll, createNew }
+const updateAnecdote = async (id, newAnecdote) => {
+  const response = await axios.put(`${baseUrl}/${id}`, newAnecdote)
+  return response.data
+}
+
+export default { getAll, createNew, updateAnecdote }
